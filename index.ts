@@ -9,7 +9,7 @@ const io = new Server({
 });
 
 const httpServer = http.createServer();
-const PORT = 9000;
+var PORT = process.env.PORT || 9000;
 io.attach(httpServer);
 httpServer.listen(PORT, () => console.log(`HTTP Server started at PORT:${PORT}`));
 

@@ -7,7 +7,7 @@ var io = new Server({
     },
 });
 var httpServer = http.createServer();
-var PORT = 9000;
+var PORT = process.env.PORT || 9000;
 io.attach(httpServer);
 httpServer.listen(PORT, function () { return console.log("HTTP Server started at PORT:".concat(PORT)); });
 io.on('connection', function (socket) {
